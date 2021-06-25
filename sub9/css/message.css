@@ -1,0 +1,79 @@
+
+
+/* 쪽지 보내기(message_form.php) */
+#message_box { position: relative; width: 800px; margin: 0 auto; }
+#message_box h3 { padding: 10px; border-bottom: solid 2px #516e7f; font-size: 20px; padding: 10px 10px 10px 50px; border-bottom: solid 2px #516e7f; font-size: 22px; line-height: 60px;}
+#message_box2 h3 { padding: 10px; border-bottom: solid 2px #516e7f; font-size: 20px; padding: 10px 10px 10px 50px; border-bottom: solid 2px #516e7f; font-size: 22px; line-height: 60px;}
+#write_msg span { display: inline-block; }
+#write_msg .col1 { width: 150px; }
+#write_msg li {	padding: 12px; border-bottom: solid 1px #dddddd; padding-left: 50px; }
+#write_msg input { width: 870px; height: 25px; }
+#write_msg textarea { width: 870px;	height: 150px; margin-left: 40px; }
+#write_msg #text_area {	position: relative;	height: 158px; }
+#write_msg #text_area .col1 { position: absolute; top: 10px; }
+#write_msg #text_area .col2 { position: absolute; left: 166px; }
+#write_msg button {	margin: 30px 0 30px 990px; padding: 5px 12px; cursor: pointer; }
+/* 수신/송신 쪽지함(message_form.php) */
+#message li { padding: 10px; padding-left: 30px; border-bottom: solid 1px #dddddd; }
+#message li:nth-child(1) { font-weight: bold; }
+#message span {	display: inline-block; text-align: center; }
+#message .title { font-weight: bold; }
+#message .col1 { width: 100px; }
+#message .col2 { width: 630px; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#message .col3 { width: 150px; }
+#message .col4 { width: 150px; }
+#page_num {	text-align: center;	margin: 30px 0 }
+#page_num li { display: inline; }
+#message_box .top_buttons  { text-align: right; margin: 20px 0 20px 0; }
+#message_box .top_buttons li { display: inline; margin-right: 20px; }
+#message_box .top_buttons a:link { text-decoration: underline; color: green; }
+#message_box .top_buttons a:visited { text-decoration: underline; color: green; }
+#message_box .buttons { text-align: right; margin: 20px 0 40px 0; }
+#message_box .buttons li { display: inline; }
+#message_box .buttons button { padding: 5px 10px; cursor: pointer; }
+#message_box2 .top_buttons  { text-align: right; margin: 20px 0 20px 0; }
+#message_box2 .top_buttons li { display: inline; margin-right: 20px; }
+#message_box2 .top_buttons a:link { text-decoration: underline; color: green; }
+#message_box2 .top_buttons a:visited { text-decoration: underline; color: green; }
+#message_box2 .buttons { text-align: right; margin: 20px 0 40px 0; }
+#message_box2 .buttons li { display: inline; }
+#message_box2 .buttons button { padding: 5px 10px; cursor: pointer; }
+/* 쪽지함 보기(view_msg.php) */
+#message_box { width: 1000px; height: 100%; margin: 0 auto; float: left; border: 1px solid #333;}
+#message_box .title { padding: 10px; border-bottom: solid 2px #516e7f; font-size: 20px; }
+#message_box2 .title { padding: 10px; border-bottom: solid 2px #516e7f; font-size: 20px; }
+#view_content li:nth-child(1) {	padding: 15px; border-bottom: solid 1px #aaaaaa; }
+#view_content .col2 { float: right; }
+#view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; height: 305px;}
+#view_content li:nth-child(3) button { padding: 5px 20px; margin: 15px 0 40px 720px; cursor: pointer; }
+
+
+/*틀*/
+section{margin-top: 10px; margin-bottom: 10px;}
+#message_box_wrap{width: 1420px; margin: 0 auto;}
+#message_title{width: 1341px; height: 150px; margin-left: 49px; float: left; background-color: #01a1ff; margin-bottom: 20px;}
+#message_title h3{color: #ffffff; font-size: 40px; width: 201px; float: left; font-weight: normal; text-align: center; margin-top: 36px;}
+#message_title span{font-size: 25px; margin-left: 15px; display: block;}
+#message_title img{display: block; float: right; margin-right: 15px;}
+#message_box_sidebar{width: 260px; height: 300px; float: left; margin-right: 50px; margin-top: 107px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e2e2e2+0,fefefe+100 */
+background: #e2e2e2; /* Old browsers */
+background: -moz-linear-gradient(left,  #e2e2e2 0%, #fefefe 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #e2e2e2 0%,#fefefe 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #e2e2e2 0%,#fefefe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 ); /* IE6-9 */
+
+}
+#message_box_sidebar ul{margin-top: 10px;}
+#message_box_sidebar ul li span{display: block; width: 200px; height: 50px; margin: 0 auto; text-align: center; line-height: 50px; font-size: 19px; font-weight: bold; background-color: #b7e4ff; margin-bottom: 5px;}
+#message_box_sidebar ul li span a{display: block; color: #444444; text-shadow: 1px 1px 1px #999999;}
+#message_box_sidebar ul li span.active{background-color: #01a1ff;}
+#message_box_sidebar ul li span.active a{color: #ffffff;}
+#message_box_sidebar ul li span:hover{background-color: #01a1ff;}
+#message_box_sidebar ul li span:hover a{color: #ffffff;}
+#message_box{width: 1100px; height: 511px; margin: 0 auto; float: left; border: 1px solid #333333;}
+#message_box2{width: 1100px; height: 660px; margin: 0 auto; float: left; border: 1px solid #333333;}
+footer #footer{padding-top: 0px; margin-top: 0px;}
+.arrow{background: url(../images/message_arrow.png) no-repeat; width: 20px; height: 20px; vertical-align: middle; background-position: 0px -2px;}
+#message_box button:hover .arrow{background-position: 0px -61px;}
+#message_box2 button:hover .arrow{background-position: 0px -61px;}

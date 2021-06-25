@@ -1,0 +1,155 @@
+﻿html{overflow-y:scroll;}
+*{margin:0; padding:0;}
+ul, li{list-style:none;}
+a{text-decoration:none;}
+body{font-family: '맑은 고딕', '돋움', sans-serif;}
+button, img, fieldset{border:0;}
+
+.cf:after{content:''; display:block; clear:both;}
+.fl{float:left;}
+.fr{float:right;}
+.gray{color:#e0e0e0;}
+
+/* body{background:url(../sub02.png) no-repeat center top; height:4000px;} */
+
+#Contentwrap{width:100%; height:100%;}
+	#localGnb{width:100%; height:50px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+		.localGnbInner{width:1420px; height:50px; margin:0 auto; padding: 8px 0px; box-sizing: border-box;}
+		.gnb{width:800px; height:30px; padding-top: 8px; padding-left: 8px; box-sizing: border-box; float:left;}
+		.gnb a{display:block; float:left; font-size: 18px; font-weight: bold; padding: 0px 5px; color:#666666;}
+		.gnb a.active{color:#333333;}		
+		.gnb span{width:24px; height:24px; display:block; float:left;}
+		.gnb .gt{background:url(../images/ico_arrow_small.png) no-repeat bottom 0px left -24px;}
+		.gnb .home{background: url(../images/sp_ico_layout.png) no-repeat top 0px left 0px; width: 20px; height: 20px; display: block; margin-top:3px;}
+		.shareArea{width:88px; height:30px; float:right; padding-top:8px; box-sizing:border-box;}
+		.shareArea ul{width:88px; height:30px;}
+		.shareArea li{float:left; margin-right:5px;}
+		.shareArea a{display:block;}
+		.shareArea .share{background:url(../images/sp_ico_layout.png) no-repeat top -20px left 0px; width: 24px; height: 24px;}
+		.shareArea .print{background:url(../images/sp_ico_layout.png) no-repeat top -50px left 0px; width: 24px; height: 24px;}
+		.shareArea .bookmark{background:url(../images/sp_ico_layout.png) no-repeat top -207px left 0px;  width: 24px; height: 24px;}
+	.contentWrapInner{width:1420px; height:100%; margin:0 auto; border-left:5px solid #e9e9e9; box-sizing: border-box;}	
+	#sidebar{width: 245px; height: 100%; float: left; box-sizing: border-box; border-top: 5px solid #e9e9e9;}
+	#sidebar>ul{padding: 13px;}
+	#sidebar>ul>li{box-sizing: border-box; margin-bottom: 4px; width: 214px;}
+	#sidebar>ul>li>a{line-height: 43px;  border: 1px solid #dddddd;text-align: left; display: block; padding-left: 17px; font-size: 20px; box-sizing: border-box; height: 46px; color:#757575; font-weight:bold;}
+	#sidebar>ul>li>a.height{height:70px; line-height:34px;}
+	#sidebar>ul>li:hover>a{border-color: #21529f; color: #21529f;}
+	#sidebar>ul>li>a.active1{background:#21529f; color:#ffffff; border:0px;}
+	#sidebar .sub1{padding:13px;}
+	#sidebar .sub1>li>a{font-weight: bold; font-size: 17px; display:block; padding: 5px 0; color:#757575;}
+	#sidebar .sub1>li>a.active2{color:#333333;}
+	#sidebar .sub2{padding:10px; background:#f9f9f9;}
+	#sidebar .sub2>li{padding-bottom: 10px;}
+	#sidebar .sub2>li>a{font-weight: bold; font-size: 16px; display:block; padding: 5px 0; color:#757575;}
+	#sidebar .sub2>li>a.active{font-weight: bold; font-size: 16px; display:block; padding: 5px 0; color:#333333;}
+	#sub2Content1{width:1170px; height:100%; float:right; border-left:5px solid #e9e9e9; box-sizing: border-box;}
+		#noticeBoard{width:1135px; margin-bottom:25px; /* background:green; */ float:right; padding-top: 32px;}
+			/* 게시판 제목 */
+			.noticeBoardTit{font-size:40px; line-height: 1.1; color: #333333; font-weight: normal; margin:14px 0px 40px; letter-spacing:-2px;}
+			.noticeBoardSubTit{font-size:26px; line-height: 1.2; color: #3662c1; margin-bottom:33px; letter-spacing:-2px;}		
+			/* 게시판 카테고리 */
+			.boardSearchForm{border-top:2px solid #333333; border-bottom:1px solid #333333; margin-bottom:46px;}
+			.rowTable{height:57px; background-color:#ffffff; border-bottom:1px solid #cccccc;}			
+			.categoryTit1{width:134px; height:57px; text-align:center; background-color:#f5f5f5;}
+			.categoryTitName1{font-size:15px; vertical-align:middle; display:block; line-height:57px;}
+			.categorySearch1{width:157px; height:44px; border:1px solid #cccccc; border-radius:3px; padding: 0 24px 0 8px; margin:6px 4px 4px 9px; background: #ffffff url(../images/bg_select_arrow1.png) no-repeat 100% 50%; -o-appearance:none; -moz-appearance:none; -webkit-appearance:none; -ms-appearance:none; appearance:none;}			
+			.rowTableSearch{height:57px; background-color:#ffffff; border-bottom:1px solid #333333;}			
+			.categoryTit2{width:134px; height:57px; text-align:center; background-color:#f5f5f5;}
+			.categoryTitName2{font-size:15px; vertical-align:middle; display:block; line-height:57px;}
+			.dateSearch1{width:139px; height:44px; border:1px solid #cccccc; border-radius:3px; padding: 0 24px 0 8px; margin:6px 0px 4px 9px; background: #ffffff url(../images/ico_calender1.png) no-repeat 100% 50%;}	
+			.dateSearch2{width:139px; height:44px; border:1px solid #cccccc; border-radius:3px; padding: 0 24px 0 8px; margin:6px 0px 4px 3px; background: #ffffff url(../images/ico_calender1.png) no-repeat 100% 50%;}				
+			.hyphen{margin:13px 0px 0px 3px; display:block; color:#cccccc;}
+			.categorySearch2{width:117px; height:45px; border:1px solid #cccccc; border-radius:3px; padding: 0 24px 0 8px; margin:6px 4px 4px 13px; background: #ffffff url(../images/bg_select_arrow1.png) no-repeat 100% 50%; -o-appearance:none; -moz-appearance:none; -webkit-appearance:none; -ms-appearance:none; appearance:none;}
+			.search1{width:387px; height:44px; border:1px solid #cccccc; border-radius:3px; padding: 0 24px 0 8px; margin:5px 0px 4px 1px; background: #ffffff url(../images/ico-search1.png) no-repeat 100% 50%;}	
+			.boardPage{letter-spacing:-1px; margin-bottom:20px;}
+			
+			
+			/* #board > div input{display:none;} */
+			#board .ctnTitle{height:43px; background-color:#ffffff;  border-bottom:2px solid #dddddd;}
+			#board .ctnTitle.closed{cursor:pointer;}
+			/* #board .ctnTitle label{float:left;} */
+			#board .ctnTitle .accodion{float:left;}
+			#board .ctnTitle .titleBtn{display:block; width:25px; height:25px; margin:14px 17px 0px 0px; text-indent:-99999px; float:right; background:url(../images/ico_depth_faq.png) no-repeat 0px 0px; cursor:pointer;}
+			#board .ctnTitle .titleBtn:hover{cursor:default; background-position:-29px 0px;}
+			/* #board label{cursor:pointer;} */
+			#board .question1{width:30px; height:30px; margin:6px -8px 0px 20px; text-indent:-99999px; float:left; background:url(../images/ico_faq.png) no-repeat 0px 0px;}
+			#board .question2{width:30px; height:30px; margin:6px 5px 0px 20px; text-indent:-99999px; float:left; background:url(../images/ico_faq.png) no-repeat -43px 0px;}
+			#board .title{width:858px; height:25px; padding:2px 30px 9px 12px; float:left; font-size:22px;}
+			
+			#board .ctnWrap{display:block; height:100%;}
+			#board .ctnWrap.closed{display:none;}			
+				.subject{width:100%;} 
+				.subject p{float: left; padding:3px 0px 10px 0px; font-size:21px; color:#333333;}
+				.color1{color:#7820b9; font-weight:bold;}
+				.color2{color:#0075c8; font-weight:bold;}
+				.color3{color:#ff0000; font-weight:bold; background-color:#ffffff;}
+				.pdb{padding-bottom:5px;}
+				.content1{padding-left:57px; padding-bottom:10px;}
+				.content1 p{font-size:18px; font-weight:bold; padding-bottom:5px;}
+				.content2, .content3, .content4, .content5, .content6{padding-left:57px; padding-bottom:10px; width:100%;}
+				.content2 h4, .content3 h4, .content4 h4, .content5 h4, .content6 h4{font-size:18px; padding-bottom:5px;}
+				.content2 ul, .content3 ul, .content4 ul, .content5 ul, .content6 ul{padding-left:20px; font-size:18px;}
+				.content2 ul li, .content3 ul li, .content4 ul li, .content5 ul li, .content6 ul li{padding-bottom:3px;}
+				
+				.content2 .guide a{text-decoration:underline;}
+				
+/* 			#board input:checked ~div.ctnWrap{display:block;}
+			#board input:checked ~.ctnTitle .titleBtn{background-position:-56px 0px;}
+			#board input:checked ~div.ctnTitle{border-style:none;}
+			#board input:checked ~div.ctnTitle{border-style:none;}
+			#board input:checked ~div.ctnWrap{border-bottom:2px solid #dddddd;}
+			#board input:checked ~div{background-color:#f5f5f5;}
+			#board input:checked ~div.title{cursor:default;} */
+			
+			.pageNavi ul li{float:left;}
+			.pageNavi{margin:25px 0; text-align:center; font-size:0.8em;}			
+			.pageNavi ul li > a {display: block; vertical-align: middle; width: 46px; height: 29px; overflow: hidden; border: 1px solid #ccc;border-radius: 3px; background:url(../images/sp_ico_paginate.png) no-repeat;}
+			.pageNavi ul li > a.pgFirst{background-position: center 9px;}			
+			.pageNavi ul li > a.pgPrev{background-position: center -11px;}			
+			.pageNavi ul li > a.pgNext{background-position: center -31px;}			
+			.pageNavi ul li > a.pgEnd{background-position: center -51px;}
+			.pageNavi .number{margin:0px 32px;}
+			.pageNavi .number a{display: block; float:left; width: 31px; height: 28px; line-height: 28px; color: #666666; border: 1px solid #cccccc; border-radius: 3px; margin-right:2px;}
+			.pageNaviCtn{margin: 0px 348px auto;}
+			
+
+
+		.survey{width: 1135px; height: 196px; margin-bottom: 47px; float: right; box-sizing: border-box; border: 1px solid #b5b7bf;}
+		.survey .surveyTitle{height: 59px; background: #f9f9f9;}
+		.survey .surveyTitle h4{float: left; width: 157px; height: 59px; background: url(../images/bg_order.png) no-repeat right center; color: #ffffff; line-height: 59px; padding-left: 17px; font-size: 17px;}
+		.survey .surveyTitle dl{float:left; padding: 18px 0 0 16px; font-size: 17px;}
+		.survey .surveyTitle dt{float:left; font-weight: bold; padding-right:10px; margin-right:10px; letter-spacing: -1px;}
+		.survey .surveyTitle dt.mgl{margin-left:110px;}
+		.survey .surveyTitle dd{float:left;}
+		.survey .formBoxHeader{background-color: #2d5785; width: 100%; height: 62px;}
+		.survey .formBoxHeader p{line-height: 58px; color: #ffffff; font-weight: bold; font-size: 21px; padding-left: 17px;}
+		.survey .formBoxHeader .point{line-height: 59px; color: #fff; font-size: 17px; font-weight: bold; padding-right: 11px;}
+		.survey .formBoxHeader .point span{padding-right:16px;}
+		.survey .formBoxHeader .point span span{padding-right:8px;}
+		.formBox .satisfyInner{width: 100%; height: 74px; line-height: 67px;padding: 0 18px 0 29px; box-sizing: border-box;}
+		.formBox .satisfyInner span{font-size: 17px; font-weight: bold; padding-right: 4px;}
+		.formBox .satisfyInner label{padding-left: 8px;}
+		.formBox .satisfyInner .comment input{margin-right: 1px; width: 221px; height: 38px; margin-top: 17px; background: #474e61; color: #fff; font-weight: bold; font-size: 16px; border:0px;}
+		.preucation{width: 1135px; height: 191px; float: right; box-sizing: border-box; border: 1px solid #dddddd; padding: 31px 40px 28px 42px; margin-bottom: 70px;}		
+		.preucation p{font-size: 18px; line-height: 26px;}		
+		.preucation a{font-size: 21px; font-weight: bold; color:#1e4da4;}		
+		.preucation .mgb{margin-bottom:25px;}	
+		.snsBox{width:1135px; float:right;}
+		.snsBox .loginSns{height:40px; margin-bottom:10px;}
+		.snsBox li{float:left;}
+		.snsBox button{border: 1px solid #dedede; margin-right:5px;}
+		.snsBox .button1{background:url(../images/zero_sprite.png) no-repeat; background-position:0px -274px; width:40px; height:40px;}
+		.snsBox .button2{background:url(../images/zero_sprite.png) no-repeat; background-position:-319px 0px; width:40px; height:40px;}
+		.snsBox .button3{background:url(../images/zero_sprite.png) no-repeat; background-position:-274px -180px; width:40px; height:40px;}
+		.snsBox .button4{background:url(../images/zero_sprite.png) no-repeat; background-position:-319px -180px; width:40px; height:40px;}
+		.snsBox .button5{background:url(../images/zero_sprite.png) no-repeat; background-position:-274px -225px; width:40px; height:40px;}
+		.snsBox .commmentArea .commentTxt1 textarea{width: 100%; height: 55px; padding: 12px 8px; font-size: 14px; line-height: 30px; box-sizing: border-box; border: 1px solid #dedede;}
+		.snsBox .commmentArea .commentTxt2{border: 1px solid #dedede; height: 40px; margin-bottom:20px;}
+		.snsBox .commmentArea .commentTxt2 .sticker1{background:url(../images/zero_sprite.png) no-repeat; background-position:-589px -603px; width:25px; height:25px; display:block; float: left; margin-right: 1010px; margin-top: 7px;}
+		.snsBox .commmentArea .commentTxt2 .sticker2{background:url(../images/zero_sprite.png) no-repeat; background-position:-279px -572px; width:25px; height:25px; display:block; float:left; margin-top: 7px;}
+		.snsBox .commmentArea .commentTxt2 button{float:right; padding: 10px 20px 11px 20px; margin-right:0px; background-color:#d60036; color:#ffffff;}
+		.snsBox .commmentArea .dotImg{margin-bottom: 10px;}
+		.snsBox .commmentArea .dotImg img{margin: 0 auto; display: block;}
+		.snsBox .commmentArea p{font-size: 14px; color: #777; line-height: 18px; text-align:center;}		
+	

@@ -1,0 +1,6 @@
+﻿/* #search_wrap select{margin-top: 2px;}
+#search_wrap input {margin-top: 2px;}
+#search_wrap button{position: relative; top: 3px;} */
+
+.mainAirfort{width:400px; height:95px; background:#002650 url(../images/bg_airport.png);}
+#forPeople ul li a{width: 74px; background: #ffffff url(../images/ico_cityzen.png) no-repeat;}
