@@ -46,7 +46,7 @@
 	if($userlevel==1){
 ?>
 
-					<li><a href="admin.php">관리자 모드(15Ch)</a></li>
+					<li><a href="../sub11/admin.php">관리자 모드(15Ch)</a></li>
 <?php
 	}
 ?>

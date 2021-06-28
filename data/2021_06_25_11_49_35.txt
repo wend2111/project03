@@ -1,0 +1,66 @@
+create table members (
+      num int not null auto_increment,
+      id char(15) not null,
+      pass char(15) not null,
+      name char(10) not null,
+      email char(80),
+      regist_day char(20),
+      level int,
+      point int,
+      primary key(num)  
+);
+
+create table message (
+    num int not null auto_increment,
+    send_id char(20) not null,
+    rv_id char(20) not null,
+    subject char(200) not null,
+    content text not null,
+    regist_day char(20),
+    primary key(num)  
+);
+
+
+
+insert into message (send_id, rv_id, subject, content,  regist_day) values('admin', 'ashram7', '내가 좋아하는 것들을 적어 놓았습니다. 이 부분은 제목을 길게 넣어도 말 줄임표로 표시되는지 테스트하기 위한 메세지 제목 설정입니다. 말 줄임표는 영어 단어로는 ellipsis라고 하죠.', '
+선생님이 내준 과제를 다하고 나서 즐기는 게임
+예쁜 여자친구와 같이 다정하고 보는 웹툰
+귀여운 내 강아지와 산책하는 일
+주말에 화단에 물주는 일
+축구 경기를 끝내고 승리를 자축하면서 마시는 맥주
+', '2021-06-23 (13:06)');
+
+
+
+
+
+
+create table board (
+    num int not null auto_increment,
+    id char(15) not null,
+    name char(10) not null,
+    subject char(200) not null,
+    content text not null, 
+    regist_day char(20) not null,
+    hit int not null,
+    file_name char(40),
+    file_type char(40),
+    file_copied char(40),
+    primary key(num)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

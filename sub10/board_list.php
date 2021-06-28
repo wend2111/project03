@@ -184,14 +184,14 @@
 ?>
 						</div>
 						<div class="pageNavi cf">
-							<ul class="pageNaviCtn cf">	
+							<ul class="pageNaviCtn cf">						
 <?php
 	if ($total_page>=2 && $page >= 2)	
 	{
 		$new_page = $page-1;
 		$first_page = 1;
-		echo "<li><a href='board_list.php?page=$first_page' title='처음 목록으로'' class='pgFirst'></a></li>";
-		echo "<li><a href='board_list.php?page=$new_page'' title='이전 목록으로'' class='pgPrev'></a></li>";
+		//echo "<li><a href='board_list.php?page=$first_page' title='처음 목록으로'' class='pgFirst'></a></li>";
+		//echo "<li><a href='board_list.php?page=$new_page'' title='이전 목록으로'' class='pgPrev'></a></li>";
 									
 	}		
 	else 
@@ -207,7 +207,7 @@
 		}
 		else
 		{
-			echo "<li<div class='number'><a href='board_list.php?page=$i' title='1페이지' class='active3'>$i</a></div></li>";
+			echo "<li><div class='number'><a href='board_list.php?page=$i' title='1페이지' class='active3'>$i</a></div></li>";
 		}
 	}
 	if ($total_page>=2 && $page != $total_page)		
