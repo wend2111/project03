@@ -14,7 +14,8 @@
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="js/cookie.js"></script>	
-	<script src="js/date.js"></script>	
+	<script src="js/date.js"></script>
+	<script src="js/guidetext.js"></script>		
 	<script src="js/script.js"></script>
     <script>
 	    window.open("alert.htm", "", "location=no, directories=no, resizable=no, toolbar=no, width=590, height=323")		

@@ -43,7 +43,7 @@ h1, h2, .hidden{display:none; opacity:0; text-indent:-99999px; visibility:hidden
 	.mainSearch{width:400px; height:79px; background:#0051a3; float:left;}
 	.mainSearch .title{font-size:24px; float:left; padding: 20px 0 0 17px; color:#ffffff; font-weight:normal; letter-spacing:-2px;}
 	.mainSearch .mainSearchText{width:212px; height:40px; float:left; margin: 18px 0 0 16px; border:0px;  padding-left:8px; font-size:15px;}
-	.mainSearch .gray{color:#e0e0e0;}
+	.gray{color:#e0e0e0;}
 	.mainSearch .mainSearchBtn{background:#01a1ff; border:0px; float:left; margin-top:17px; padding:3px;}
 	
 	.mainMayor{width:200px; height:228px; margin-bottom:18px; background:url(../images/bg_mayor.jpg) no-repeat; float:left;}

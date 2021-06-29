@@ -45,7 +45,7 @@
 	$num  = $_GET["num"];
 
 	$con = mysqli_connect("localhost", DBuser, DBpass, DBname);
-	$sql = "select * from message where num=$num";
+	$sql = "select * from message where num=$num ";
 	$result = mysqli_query($con, $sql);
 
 	$row = mysqli_fetch_array($result);
@@ -70,6 +70,12 @@
 		echo " 내용보기";
 	else
 		echo " 내용보기";
+
+	$read_chk = 1; // read_chk에 1을 넣음
+	$sql2 = "update message set read_chk=$read_chk where num=$num" ;
+	$result3 = mysqli_query($con, $sql2);
+
+
 ?>
 		</h3>
 		<ul id="view_content">
@@ -84,7 +90,7 @@
 		<ul class="buttons">
 			<li><button onclick="location.href='message_response_form.php?num=<?=$num?>'">답변 쪽지</button></li>
 			<li><button onclick="location.href='message_delete.php?num=<?=$num?>&mode=<?=$mode?>'">삭제</button></li>
-		</ul>
+		</ul>	
 	</div> <!-- message_box -->
 </div>
 </section> 

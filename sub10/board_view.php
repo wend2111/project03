@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../css/main_layout.css"/>
 
 	<link rel="stylesheet" href="css/board.css"/>
+	<link rel="stylesheet" href="css/sub5.css"/>
 
 	<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>	
@@ -65,13 +66,37 @@
     	<?php include "../sub9/header_sub.php";?>
 </header>  
 <section>
-	<div id="main_img_bar">
-		<img src="./img/main_img.png">
-	</div>
-	<div id="board_box">
-		<h3 class="title">
-			게시판 > 내용보기
-		</h3>
+	<div id="Contentwrap" class="cf">
+		<div id="localGnb">
+			<div class="localGnbInner cf">
+				<div class="gnb">
+					<a href="../index.php" class="home"></a>
+					<span class="gt"></span>
+					<a href="board_list.php">게시판</a>
+					<span class="gt"></span>
+					<a href="board_form.php" class="active">게시판 글쓰기</a>
+				</div>
+				<div class="shareArea">
+					<ul>
+						<li><a href="#" class="share"></a></li>
+						<li><a href="#" class="print"></a></li>
+						<li><a href="#" class="bookmark"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- id="sub1Sitemap" -->
+		<div class="contentWrapInner cf">
+			<div id="sidebar" class="cf">
+				<ul>
+					<li><a href="board_form.php">게시판 글쓰기</a></li>
+					<li><a href="board_list.php">게시판 목록보기</a></li>
+				</ul>
+			</div><!-- id="sub1Sidebar" -->
+			<div id="sub5Content1" class="cf">	
+				<div id="board_box">
+					<h3 class="title">
+						게시판 내용보기
+					</h3>
 <?php
 	$num  = $_GET["num"];
 	$page  = $_GET["page"];
@@ -98,32 +123,35 @@
 	$sql = "update board set hit=$new_hit where num=$num";   
 	mysqli_query($con, $sql);
 ?>		
-		<ul id="view_content">
-			<li>
-				<span class="col1"><b>제목 :</b> <?=$subject?></span>
-				<span class="col2"><?=$name?> | <?=$regist_day?></span>
-			</li>
-			<li>
-				<?php
-					if($file_name) {
-						$real_name = $file_copied;
-						$file_path = "../data/".$real_name;
-						$file_size = filesize($file_path);
+					<ul id="view_content">
+						<li>
+							<span class="col1"><b>제목 :</b> <?=$subject?></span>
+							<span class="col2"><?=$name?> | <?=$regist_day?></span>
+						</li>
+						<li>
+							<?php
+								if($file_name) {
+									$real_name = $file_copied;
+									$file_path = "../data/".$real_name;
+									$file_size = filesize($file_path);
 
-						echo "▷ 첨부파일 : $file_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
-						<a href='download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
-					}
-				?>
-				<?=$content?>
-			</li>		
-		</ul>
-		<ul class="buttons">
-				<li><button onclick="location.href='board_list.php?page=<?=$page?>'">목록</button></li>
-				<li><button onclick="location.href='board_modify_form.php?num=<?=$num?>&page=<?=$page?>'">수정</button></li>
-				<li><button onclick="location.href='board_delete.php?num=<?=$num?>&page=<?=$page?>'">삭제</button></li>
-				<li><button onclick="location.href='board_form.php'">글쓰기</button></li>
-		</ul>
-	</div> <!-- board_box -->
+									echo "▷ 첨부파일 : $file_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
+									<a href='download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
+								}
+							?>
+							<?=$content?>
+						</li>		
+					</ul>
+					<ul class="buttons">
+							<li><button onclick="location.href='board_list.php?page=<?=$page?>'">목록</button></li>
+							<li><button onclick="location.href='board_modify_form.php?num=<?=$num?>&page=<?=$page?>'">수정</button></li>
+							<li><button onclick="location.href='board_delete.php?num=<?=$num?>&page=<?=$page?>'">삭제</button></li>
+							<li><button onclick="location.href='board_form.php'">글쓰기</button></li>
+					</ul>
+				</div> <!-- board_box -->
+			</div>
+		</div>
+	</div>
 </section> 
 <footer>
     <?php include "../footer.php";?>

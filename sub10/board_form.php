@@ -11,14 +11,17 @@
 	<link rel="stylesheet" href="../css/main_layout.css"/>
 
 	<link rel="stylesheet" href="css/board.css"/>
+	<link rel="stylesheet" href="css/sub5.css"/>
 
 	<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>	
 	<script src="../js/jquery-1.9.1.min.js"></script>
 	<script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="../js/cookie.js"></script>	
-	<script src="../js/date.js"></script>	
+	<script src="../js/date.js"></script>
+	<script src="../js/guidetext.js"></script>			
 	<script src="../js/script.js"></script>	
+
 	<script>
 		var tid;
 		var cnt = parseInt(60*15);//초기값(초단위)
@@ -86,40 +89,67 @@
     <?php include "../sub9/header_sub.php";?>
 </header>   
 <section>
-	<div id="main_img_bar">
-		<img src="./img/main_img.png">
+	<div id="Contentwrap" class="cf">
+		<div id="localGnb">
+			<div class="localGnbInner cf">
+				<div class="gnb">
+					<a href="../index.php" class="home"></a>
+					<span class="gt"></span>
+					<a href="board_list.php">게시판</a>
+					<span class="gt"></span>
+					<a href="board_form.php" class="active">게시판 글쓰기</a>
+				</div>
+				<div class="shareArea">
+					<ul>
+						<li><a href="#" class="share"></a></li>
+						<li><a href="#" class="print"></a></li>
+						<li><a href="#" class="bookmark"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- id="sub1Sitemap" -->
+		<div class="contentWrapInner cf">
+			<div id="sidebar" class="cf">
+				<ul>
+					<li><a href="board_form.php">게시판 글쓰기</a></li>
+					<li><a href="board_list.php">게시판 목록보기</a></li>
+				</ul>
+			</div><!-- id="sub1Sidebar" -->
+			<div id="sub5Content1" class="cf">	
+				<div id="board_box">
+					<h3 id="board_title">
+						 글 쓰기
+					</h3>
+					<form  name="board_form" method="post" action="board_insert.php" enctype="multipart/form-data">
+						<ul id="board_form">
+							<li>
+								<span class="col1">이름 : </span>
+								<span class="col2"><?=$username?></span>
+							</li>		
+							<li class="subject">
+								<span class="col1">제목 : </span>
+								<span class="col2"><input name="subject" type="text" value="제목을 입력하세요" class="guidetext"></span>
+							</li>	    	
+							<li id="text_area">	
+								<span class="col1">내용 : </span>
+								<span class="col2">
+								<textarea name="content"></textarea>
+								</span>
+							</li>
+							<li>
+								<span class="col1"> 첨부 파일</span>
+								<span class="col2"><input type="file" name="upfile"></span>
+							</li>
+						</ul>
+						<ul class="buttons">
+							<li><button type="button" onclick="check_input()">완료</button></li>
+							<li><button type="button" onclick="location.href='board_list.php'">목록</button></li>
+						</ul>
+					</form>
+				</div> <!-- board_box -->
+			</div>
+		</div>
 	</div>
-	<div id="board_box">
-		<h3 id="board_title">
-			게시판 > 글 쓰기
-		</h3>
-		<form  name="board_form" method="post" action="board_insert.php" enctype="multipart/form-data">
-			<ul id="board_form">
-				<li>
-					<span class="col1">이름 : </span>
-					<span class="col2"><?=$username?></span>
-				</li>		
-				<li>
-					<span class="col1">제목 : </span>
-					<span class="col2"><input name="subject" type="text"></span>
-				</li>	    	
-				<li id="text_area">	
-					<span class="col1">내용 : </span>
-					<span class="col2">
-					<textarea name="content"></textarea>
-					</span>
-				</li>
-				<li>
-					<span class="col1"> 첨부 파일</span>
-					<span class="col2"><input type="file" name="upfile"></span>
-				</li>
-			</ul>
-			<ul class="buttons">
-				<li><button type="button" onclick="check_input()">완료</button></li>
-				<li><button type="button" onclick="location.href='board_list.php'">목록</button></li>
-			</ul>
-		</form>
-	</div> <!-- board_box -->
 </section> 
 <footer>
     <?php include "../footer.php";?>

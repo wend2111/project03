@@ -69,20 +69,22 @@
 </header>  
 <section>
  	<div id="message_box_wrap" class="cf">
- 			<div id="message_title">
- 				<h3>채팅<br><span>Web Messenger</span></h3>
- 				<img src="images/chatting_bg.png" width="150" height="150" alt="타이틀이미지">
- 			</div>
-	 	<div id="message_box_sidebar2">
-	 		<ul class="top_buttons">
-	 			
+		<div id="message_title">
+			<h3>채팅</h3>
+			<span>Web Messenger</span>
+			<span>유저분들을 위한 채팅 보내기 입니다. 모두들 환영해요^^</span>
+			<img src="images/message_title.png" width="150" height="150" alt="타이틀이미지">
+		</div>
+		<div id="message_box_inner" class="cf">
+		 	<div id="message_box_sidebar">
+		 		<ul class="top_buttons">
 					<li><span><a href="message_form.php">쪽지 보내기 </a></span></li>
 					<li><span><a href="message_box.php?mode=rv">수신 쪽지함 </a></span></li>
 					<li><span><a href="message_box.php?mode=send">송신 쪽지함</a></span></li>
-			</ul> 	
-	  </div>
-  	  <div id="message_box2">
-	    <h3>	
+				</ul> 	
+		  	</div>
+	  	 	 <div id="message_box2">
+		    	<h3>	
 <?php
  		if (isset($_GET["page"]))
 			$page = $_GET["page"];
@@ -96,22 +98,23 @@
 		else
 			echo " 목록보기";
 ?>
-		</h3>
+				</h3>
 		<!-- <div> 필요없음 -->
-		<ul id="message">
-			<li>
-				<span class="col1">번호</span>
-				<span class="col2">제목</span>
-				<span class="col3">
+				<ul id="message">
+					<li>
+						<span class="col1">번호</span>
+						<span class="col2">제목</span>
+						<span class="col3">
 <?php						
 					if ($mode=="send")
 						echo "받은이";
 					else
 						echo "보낸이";
 ?>
-				</span>
-				<span class="col4">등록일</span>
-			</li>
+						</span>
+						<span class="col4">등록일</span>
+						<span class="col5">수신여부</span>
+					</li>
 <?php
 	$con = mysqli_connect("localhost", DBuser, DBpass, DBname);
 
@@ -145,29 +148,45 @@
       $num    = $row["num"];
       $subject     = $row["subject"];
       $regist_day  = $row["regist_day"];
+      $read_chk = $row["read_chk"];
 
       if ($mode=="send")
 	  		$msg_id = $row["rv_id"];
       else
 	  		$msg_id = $row["send_id"];
 	  
+	
+
       $result2 = mysqli_query($con, "select name from members where id='$msg_id'");
       $record = mysqli_fetch_array($result2);
-      $msg_name     = $record["name"];	  
+      $msg_name     = $record["name"];
+
 ?>
-			<li>
-				<span class="col1"><?=$number?></span>
-				<span class="col2"><a href="message_view.php?mode=<?=$mode?>&num=<?=$num?>"><?=$subject?></a></span>
-				<span class="col3"><?=$msg_name?>(<?=$msg_id?>)</span>
-				<span class="col4"><?=$regist_day?></span>
-			</li>	
+					<li>
+						<span class="col1"><?=$number?></span>
+						<span class="col2"><a href="message_view.php?mode=<?=$mode?>&num=<?=$num?>"><?=$subject?></a></span>
+						<span class="col3"><?=$msg_name?>(<?=$msg_id?>)</span>
+						<span class="col4"><?=$regist_day?></span>
 <?php
+	  if ($read_chk == 0 && $mode=="rv")
+	  {
+	  	echo "<span class='col5'>읽지 않음</span>";  	
+	  }
+	  if ($read_chk >= 1 && $mode=="rv")
+	  {
+	  	echo "<span class='col5'>읽음</span>";
+	  }
+
+?>							
+					</li>	
+<?php
+
 	   $number--;
    }
    mysqli_close($con);
 ?>
-		</ul>
-		<ul id="page_num"> 	
+				</ul>
+				<ul id="page_num"> 	
 <?php
 	if ($total_page>=2 && $page >= 2)	
 	{
@@ -198,9 +217,10 @@
 		else 
 			echo "<li>&nbsp;</li>";
 ?>
-		</ul> <!-- page -->	    	
-	</div> <!-- message_box -->
-</div>
+				</ul> <!-- page -->	    	
+			</div> <!-- message_box -->
+		</div>
+	</div>
 </section> 
 <footer>
     <?php include "../footer.php";?>

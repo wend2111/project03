@@ -1,5 +1,7 @@
 <?php
-	include "../define.php";
+    define('DBuser','chlqjagml');
+    define('DBpass','ay2111!!');
+    define('DBname','chlqjagml');
 	
     session_start();
     if (isset($_SESSION["userid"])) $userid = $_SESSION["userid"];
@@ -17,15 +19,30 @@
 			<div id="mainLogo"><a href="../index2.php" class="showBalloon" title="부산로고"><img src="images/main_logo.png" width="215" height="60" alt="메인로고"/><h1>부산로고</h1></a></div><!-- id="mainLogo" -->
 			<div id="mainGnb">
 				<h2>메인 GNB</h2>
-				<ul>					
-					<li class="loginCnt">						
+				<ul>
+					<!-- <li class="phone"><a href="https://www.busan.go.kr/phone" target="_blank" class="showBalloon" title="행정전화번호부">행정전화번호부</a></li> -->
+					<!-- <li class="login"><a href="https://www.busan.go.kr/member/login" target="_blank" class="showBalloon" title="로그인">로그아웃</a></li> -->
+					<!-- <li class="regist"><a href="https://www.busan.go.kr/member/register-step01" target="_blank" class="showBalloon" title="회원가입">정보수정</a></li> -->
+					<li class="sitemap"><a href="https://www.busan.go.kr/SiteMap" target="_blank" class="showBalloon" title="사이트맵">사이트맵</a></li>
+					<li class="language" class="showBalloon" title="부산로고">
+						<label for="selectLanguage"></label>
+						<select name="selectLanguage" id="selectLanguage">
+							<option value="http://english.busan.go.kr">english</option>
+							<option value="http://japanese.busan.go.kr">日本語</option>
+							<option value="http://chinese.busan.go.kr">简体中文</option>
+							<option value="http://tchinese.busan.go.kr">繁體中文</option>
+						</select>
+						<button><span>GO</span></button>
+					</li>
+					<li class="sitemap"><a href="sub9/message_form.php" target="_blank" class="showBalloon" title="사이트맵">메세지 보내기</a></li>	
+					<li class="loginCnt">
 
 <?php
 	if(!$userid) {
 ?>	
 						<form>
-							<input type="button" class="button1" value="로그인" onclick="location.href='../login_form.php'">
-							<input type="button" class="button2 cf" value="회원가입" onclick="location.href='../member_form.php'">
+							<input type="button" class="button1" value="로그아웃" onclick="location.href='../index.php'">
+							<input type="button" class="button2 cf" value="정보수정" onclick="location.href='../member_modify_form.php'">
 						</form>
 						<span class="loginCntText">자동 로그아웃</span><span id="counter"></span> <input type="button" class="button3" value="연장" onclick="counter_reset()">							
 <?php
@@ -46,16 +63,11 @@
 	if($userlevel==1){
 ?>
 
-					<li><a href="../sub11/admin.php">관리자 모드</a></li>
+					<li><a href="admin.php">관리자 모드(15Ch)</a></li>
 <?php
 	}
 ?>
 					</li>
-					<li class="sitemap"><a href="sub9/message_form.php" target="_blank" class="showBalloon" title="사이트맵">메세지 보내기</a></li>	
-					<li class="icon_message">
-						<a href="sub9/message_form.php"><img src="images/message_logo.png" width="35" alt="메세지아이콘"></a>		
-					</li>	
-					<li class="sitemap"><a href="sub10/board_list.php" target="_blank" class="showBalloon" title="사이트맵">게시판 글쓰기</a></li>
 				</ul>
 			</div><!-- id="mainGnb" -->
 		</div><!-- id="header" -->

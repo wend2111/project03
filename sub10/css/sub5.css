@@ -8,7 +8,7 @@ button, img, fieldset{border:0;}
 .cf:after{content:''; display:block; clear:both;}
 .fl{float:left;}
 .fr{float:right;}
-
+.gray{color:#e0e0e0;}
 /* body{background:url(../sub02.png) no-repeat center top; height:4000px;} */
 
 #Contentwrap{width:100%; height:100%;}
@@ -78,17 +78,17 @@ button, img, fieldset{border:0;}
 			.citizenBoardText .box1_5 .nth6{width:10%; padding:10px 0px;}			
 
 			
-			.pageNavi ul li{float:left;}
+			.pageNavi ul{float: left; position: relative; left: 50%;}
+			.pageNavi ul li{float:left; position: relative; left: -50%;}
 			.pageNavi{margin:25px 0; text-align:center; font-size:0.8em;}			
 			.pageNavi ul li > a {display: block; width: 46px; height: 29px; overflow: hidden; border: 1px solid #ccc;border-radius: 3px; background:url(../images/sp_ico_paginate.png) no-repeat;}
 			.pageNavi ul li > a.pgFirst{background-position: center 9px;}			
-			.pageNavi ul li > a.pgPrev{background-position: center -11px;}			
-			.pageNavi ul li > a.pgNext{background-position: center -31px;}			
+			.pageNavi ul li > a.pgPrev{background-position: center -11px; margin-right: 10px;}			
+			.pageNavi ul li > a.pgNext{background-position: center -31px; margin-left: 10px;}			
 			.pageNavi ul li > a.pgEnd{background-position: center -51px;}
-			.pageNavi .number{margin:0px 32px;}
+			.pageNavi b{display: block; float: left; width: 31px; height: 28px; line-height: 28px; color: #666666; border: 1px solid #cccccc; border-radius: 3px; margin-right: 2px;}
 			.pageNavi .number a{display: block; float:left; width: 31px; height: 28px; line-height: 28px; color: #666666; border: 1px solid #cccccc; border-radius: 3px; margin-right:2px;}
 			.pageNavi .number a.active3{background:#1e4da4; color:#ffffff;}
-			.pageNaviCtn{margin: 0px auto; width: 653px;}
 			
 
 
@@ -129,4 +129,5 @@ button, img, fieldset{border:0;}
 		.snsBox .commmentArea .dotImg{margin-bottom: 10px;}
 		.snsBox .commmentArea .dotImg img{margin: 0 auto; display: block;}
 		.snsBox .commmentArea p{font-size: 14px; color: #777; line-height: 18px; text-align:center;}		
-	
+		
+		footer #footer{padding:0px; margin:0px;}

@@ -18,6 +18,7 @@
 	<script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="../js/cookie.js"></script>	
 	<script src="../js/date.js"></script>	
+	<script src="../js/guidetext.js"></script>	
 	<script src="../js/script.js"></script>	
 	<script>
 		var tid;
@@ -103,15 +104,47 @@
 ?>
 <section>
  	<div id="message_box_wrap" class="cf">
-		<div id="message_title">
-			<h3>채팅</h3>
-			<span>Web Messenger</span>
-			<span>유저분들을 위한 채팅 보내기 입니다. 모두들 환영해요^^</span>
-			<img src="images/message_title.png" width="150" height="150" alt="타이틀이미지">
-		</div>
- 		<div id="message_box_inner" class="cf">		
+ 		<div id="message_box_inner" class="cf">	
+			<div id="message_title" class="cf">
+				<div class="message_text fl">
+					<h3>채팅</h3>
+					<span>Web Messenger</span>
+					<span>유저분들을 위한 채팅 보내기 입니다. 모두들 환영해요^^</span>
+				</div>
+				<img src="images/message_title.png" width="150" height="150" alt="타이틀이미지">
+			</div> 			
+			<div id="user_box">
+				<h3>내 정보</h3>
+		 		<ul class="user_status">
+		 			<li>
+		 				<span class="col1"><?=$username?>님</span>
+		 				<span class="col2">레벨[<?=$userlevel?>]</span>
+		 				<span class="col3">포인트[<?=$userpoint?>]</span>
+<?php
+	$con = mysqli_connect("localhost", DBuser, DBpass, DBname);
+	$sql = "select * from message where send_id='$userid' order by num desc";
+	$sql2 = "select * from message where rv_id='$userid' order by num desc";	
+	$sql3 = "select * from message where rv_id='$userid' and read_chk='0'";	
+	$result = mysqli_query($con, $sql);
+	$result2 = mysqli_query($con, $sql2);
+	$result3 = mysqli_query($con, $sql3);
+
+	$total_record = mysqli_num_rows($result); // 전체 글 수
+	$total_record2 = mysqli_num_rows($result2); // 전체 글 수
+	$total_record3 = mysqli_num_rows($result3); // 전체 글 수
+?>		 				
+		 				<span class="col4">보낸 쪽지<?=$total_record?></span>
+		 				<span class="col5">받은 쪽지<?=$total_record2?></span>
+		 				<span class="col6">새쪽지<?=$total_record3?></span>
+<?php
+   mysqli_close($con);
+?>		 				
+		 			</li>
+		 		</ul>					
+			</div>
 		 	<div id="message_box_sidebar">
 		 		<ul class="top_buttons">
+						<li><span><a href="message_form.php">쪽지 보내기 </a></span></li>
 						<li><span><a href="message_box.php?mode=rv">수신 쪽지함 </a></span></li>
 						<li><span><a href="message_box.php?mode=send">송신 쪽지함</a></span></li>
 				</ul> 	
